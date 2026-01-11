@@ -9,115 +9,144 @@
 
 <form id="onboardingForm" novalidate>
 
-    <!-- FORM TITLE -->
-    <h1 class="form-title">Onboarding Details</h1>
+    <!-- FIXED HEADER -->
+    <div class="form-header fixed-header">
+        <h1 class="form-title">Onboarding Details</h1>
 
-    <!-- PROGRESS BAR -->
-    <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
-        <span class="progress-text" id="progressText">Step 1 of 4</span>
-    </div>
-
-    <!-- STEP 1 -->
-    <div class="step active">
-        <h2>Personal Information</h2>
-
-        <label>First Name <span class="required">*</span></label>
-        <input type="text" name="First Name" required>
-        <div class="error"></div>
-
-        <label>Last Name <span class="required">*</span></label>
-        <input type="text" name="Last Name" required>
-        <div class="error"></div>
-
-        <label>Email <span class="required">*</span></label>
-        <input type="email" name="Email" required>
-        <div class="error"></div>
-
-        <label>Contact <span class="required">*</span></label>
-        <input type="text" name="Contact" required>
-        <div class="error"></div>
-
-        <label>DOB <span class="required">*</span></label>
-        <input type="date" name="DOB" required>
-        <div class="error"></div>
-
-        <label>State <span class="required">*</span></label>
-        <input type="text" name="State" required>
-        <div class="error"></div>
-
-        <label>City <span class="required">*</span></label>
-        <input type="text" name="City" required>
-        <div class="error"></div>
-
-        <label>Country <span class="required">*</span></label>
-        <input type="text" name="Country" required>
-        <div class="error"></div>
-
-        <div class="buttons">
-            <button type="button" class="next" onclick="nextStep()">Next</button>
+        <div class="progress-wrapper">
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <span class="progress-text" id="progressText">Step 1 of 4</span>
         </div>
     </div>
 
-    <!-- STEP 2 -->
-    <div class="step">
-        <h2>Educational Details</h2>
+    <!-- FORM BODY (STEPS GO HERE) -->
+    <div class="form-body">
 
-        <h4>SSC</h4>
-        <input type="text" name="SSC School" placeholder="School Name">
-        <input type="text" name="SSC Board" placeholder="Board">
-        <input type="text" name="SSC CGPA" placeholder="CGPA (0–10)">
+        <!-- STEP 1 -->
+        <div class="step active">
+            <h2>Personal Information</h2>
 
-        <h4>Intermediate/Diploma</h4>
-        <input type="text" name="Inter College" placeholder="College Name">
-        <input type="text" name="Inter Board" placeholder="Board">
-        <input type="text" name="Inter CGPA" placeholder="CGPA (0–10)">
+            <div class="two-column">
+                <div class="field">
+                    <label>First Name <span class="required">*</span></label>
+                    <input type="text" name="First Name" required>
+                    <div class="error"></div>
+                </div>
 
-        <h4>Highest Qualification <span class="required">*</span></h4>
-        <input type="text" name="HQ College" placeholder="College / University" required>
-        <div class="error"></div>
+                <div class="field">
+                    <label>Last Name <span class="required">*</span></label>
+                    <input type="text" name="Last Name" required>
+                    <div class="error"></div>
+                </div>
 
-        <input type="text" name="HQ Board" placeholder="Board / University" required>
-        <div class="error"></div>
+                <div class="field">
+                    <label>Email <span class="required">*</span></label>
+                    <input type="email" name="Email" required>
+                    <div class="error"></div>
+                </div>
 
-        <input type="text" name="HQ CGPA" placeholder="CGPA (0–10)" required>
-        <div class="error"></div>
+                <div class="field">
+                    <label>Contact <span class="required">*</span></label>
+                    <input type="text" name="Contact" required>
+                    <div class="error"></div>
+                </div>
 
-        <div class="buttons">
-            <button type="button" class="prev" onclick="prevStep()">Previous</button>
-            <button type="button" class="next" onclick="nextStep()">Next</button>
+                <div class="field">
+                    <label>DOB <span class="required">*</span></label>
+                    <input type="date" name="DOB" required>
+                    <div class="error"></div>
+                </div>
+
+                <div class="field">
+                    <label>State <span class="required">*</span></label>
+                    <input type="text" name="State" required>
+                    <div class="error"></div>
+                </div>
+
+                <div class="field">
+                    <label>City <span class="required">*</span></label>
+                    <input type="text" name="City" required>
+                    <div class="error"></div>
+                </div>
+
+                <div class="field">
+                    <label>Country <span class="required">*</span></label>
+                    <input type="text" name="Country" required>
+                    <div class="error"></div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button type="button" class="next" onclick="nextStep()">Next</button>
+            </div>
+        </div>
+<!-- STEP 2 -->
+<div class="step">
+    <h2>Educational Details</h2>
+
+    <div class="two-column">
+        <div class="field">
+            <label>Highest Qualification <span class="required">*</span></label>
+            <input type="text" name="Highest Qualification" required>
+            <div class="error"></div>
+        </div>
+
+        <div class="field">
+            <label>College / University <span class="required">*</span></label>
+            <input type="text" name="College" required>
+            <div class="error"></div>
+        </div>
+
+        <div class="field">
+            <label>Passed Out Year <span class="required">*</span></label>
+            <input type="number" name="Passed Out Year" placeholder="YYYY" required>
+            <div class="error"></div>
+        </div>
+
+        <div class="field">
+            <label>CGPA <span class="required">*</span></label>
+            <input type="text" name="CGPA" placeholder="0.0 – 10.0" required>
+            <div class="error"></div>
         </div>
     </div>
 
-    <!-- STEP 3 -->
-    <div class="step">
-        <h2>Experience</h2>
-
-        <label>Years of Experience</label>
-        <input type="number" name="Experience" min="0">
-        <div class="error"></div>
-
-        <label>Previous Company</label>
-        <input type="text" name="Company">
-        <div class="error"></div>
-
-        <div class="buttons">
-            <button type="button" class="prev" onclick="prevStep()">Previous</button>
-            <button type="button" class="next" onclick="nextStep()">Next</button>
-        </div>
+    <div class="buttons">
+        <button type="button" class="prev" onclick="prevStep()">Previous</button>
+        <button type="button" class="next" onclick="nextStep()">Next</button>
     </div>
+</div>
 
-    <!-- STEP 4 -->
-    <div class="step">
-        <h2>Verify & Submit</h2>
-        <div id="review"></div>
 
-        <div class="buttons">
-            <button type="button" class="prev" onclick="prevStep()">Previous</button>
-            <button type="submit" class="submit">Submit</button>
+        <!-- STEP 3 -->
+        <div class="step">
+            <h2>Experience</h2>
+
+            <label>Years of Experience</label>
+            <input type="number" name="Experience">
+
+            <label>Previous Company</label>
+            <input type="text" name="Company">
+
+            <div class="buttons">
+                <button type="button" class="prev" onclick="prevStep()">Previous</button>
+                <button type="button" class="next" onclick="nextStep()">Next</button>
+            </div>
         </div>
-    </div>
 
+        <!-- STEP 4 -->
+        <div class="step">
+            <h2>Verify & Submit</h2>
+            <div id="review"></div>
+
+            <div class="buttons">
+                <button type="button" class="prev" onclick="prevStep()">Previous</button>
+                <button type="submit" class="submit">Submit</button>
+            </div>
+        </div>
+
+    </div>
 </form>
 
 <div id="successMessage" class="success-message">

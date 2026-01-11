@@ -7,13 +7,14 @@ body {
     background: linear-gradient(135deg, #667eea, #764ba2);
     margin: 0;
     height: 100vh;
+    overflow:hidden;
 }
 
 form {
     width: 720px;
     max-width: 95%;
-    max-height: 90vh;
-    overflow-y: auto;
+    
+    
     background: #fff;
     padding: 30px;
     border-radius: 14px;
@@ -22,12 +23,17 @@ form {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+     height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .form-title {
+    margin: 0 0 8px;            
+    font-size: 22px;             
+    font-weight: 700;
     text-align: center;
-    margin-bottom: 15px;
-    color: #333;
 }
 
 .progress-container {
@@ -36,12 +42,12 @@ form {
     border-radius: 6px;
     height: 10px;
     position: relative;
-    margin-bottom: 25px;
+    margin-bottom: 2px;
 }
 
 .progress-bar {
     height: 10px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: #764ba2;
     width: 0%;
     border-radius: 6px;
     transition: width 0.4s ease;
@@ -51,9 +57,26 @@ form {
     display: block;
     text-align: right;
     font-size: 13px;
-    margin-top: 6px;
+    margin-top: 2px;
     color: #555;
 }
+.fixed-header {
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 14px 18px;          
+    border-radius: 12px 12px 0 0;
+    color: #fff;
+    z-index: 10;
+}
+.form-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px;
+}
+
+
+
+
 
 .step {
     display: none;
@@ -137,4 +160,199 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.two-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 22px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+/* Make progress bar and text inline */
+.progress-wrapper {
+    display: flex;
+    align-items: center; /* vertically center text with bar */
+    justify-content: space-between; /* progress bar on left, text on right */
+    gap: 12px; /* optional spacing */
+}
+
+.progress-container {
+    flex: 1; /* progress bar takes remaining space */
+    margin-bottom: 0; /* remove extra margin */
+}
+
+.progress-text {
+    font-size: 13px;
+    white-space: nowrap; /* prevent wrapping */
+    margin-top: 0; /* remove previous margin */
+    color: #fff; /* make it visible on header */
+}
+
+
+
+/* ===== VERIFY & SUBMIT (REVIEW) ===== */
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 24px;
+    margin-top: 20px;
+}
+
+.review-item {
+    background: #f9fafb;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.review-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+.review-value {
+    font-size: 14px;
+    color: #111827;
+    word-break: break-word;
+}
+
+/* Mobile: single column */
+@media (max-width: 768px) {
+    .review-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Progress wrapper */
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;                   /* reduced */
+}
+
+/* Make full width on small screens */
+@media (max-width: 768px) {
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===========================
+   LARGE DESKTOP (1200px+)
+=========================== */
+@media (min-width: 1200px) {
+    form {
+        width: 760px;
+    }
+
+    .form-title {
+        font-size: 28px;
+    }
+}
+
+/* ===========================
+   TABLET (992px – 1199px)
+=========================== */
+@media (max-width: 1199px) {
+    form {
+        width: 680px;
+    }
+}
+
+/* ===========================
+   SMALL TABLET (768px – 991px)
+=========================== */
+@media (max-width: 991px) {
+    form {
+        width: 92%;
+        padding: 24px;
+    }
+
+    .two-column {
+        gap: 16px;
+    }
+
+    .form-title {
+        font-size: 24px;
+    }
+}
+
+/* ===========================
+   MOBILE (≤ 767px)
+=========================== */
+@media (max-width: 767px) {
+    body {
+        padding: 10px;
+    }
+
+    form {
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 14px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .form-header {
+        padding: 18px;
+    }
+
+    .form-title {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .progress-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
+
+    .progress-text {
+        text-align: right;
+        font-size: 12px;
+    }
+}
+
+/* ===========================
+   VERY SMALL SCREENS (≤ 480px)
+=========================== */
+@media (max-width: 480px) {
+    form {
+        padding: 16px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    input {
+        padding: 9px;
+        font-size: 14px;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
 }
